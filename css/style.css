@@ -1,0 +1,280 @@
+:root {
+  --primary: #e91414;
+  --bg: #d41818;
+  --text: #0e0707;
+  --white: rgb(12, 6, 6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: red;
+  color: red;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  padding: 1rem 2rem;
+  color: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.navbar .navbar-logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar .navbar-logo span {
+  color: rgb(20, 5, 5);
+}
+
+.navbar .navbar-nav a {
+  color: var(--white);
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem;
+}
+
+.navbar-nav a:hover {
+  background-color: rgb(226, 207, 207);
+  text-shadow: 0 0 5px rgb(238, 9, 9);
+  color: red;
+}
+
+.navbar .navbar-extra a {
+  color: rgb(17, 4, 4);
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: black;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+#facebook,
+#twitter,
+#instagram a:hover {
+  background-color: rgb(226, 207, 207);
+  text-shadow: 0 0 5px rgb(238, 9, 9);
+  color: red;
+  display: inline-block;
+}
+/* === SECTION BERITA === */
+
+.menu {
+  padding: 4rem 2rem;
+  background-color: #fefefe;
+}
+
+.menu h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #222;
+}
+
+.menu h2 span {
+  color: #ec150e;
+}
+
+/* Grid Artikel */
+.row {
+  display: grid;
+  gap: 2rem;
+}
+
+/* Kartu Berita */
+.menu-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.menu-card h3 {
+  font-size: 1.2rem;
+  margin: 1rem;
+  color: #333;
+}
+
+.menu-card p {
+  font-size: 0.95rem;
+  margin: 0 1rem 1rem;
+  color: #555;
+}
+
+.menu-card .read-more {
+  display: inline-block;
+  margin: 0 1rem 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #e91414;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.menu-card .read-more:hover {
+  background-color: #160e0b;
+  text-shadow: 0 0 5px rgb(238, 9, 9);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .menu h2 {
+    font-size: 1.5rem;
+  }
+
+  .menu-card img {
+    height: 160px;
+  }
+}
+
+/* Footer */
+footer {
+  /* background: var(--primary);
+  color: var(--white); */
+  text-align: center;
+  padding: 1.5rem;
+}
+
+footer a {
+  /* color: var(--white); */
+  margin: 0 0.5rem;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  #facebook,
+  #twitter,
+  #instagram {
+    display: none;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    display: block;
+    font-style: italic;
+    color: #140905;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .navbar-nav a:hover {
+    text-shadow: 0 0 5px rgb(238, 9, 9);
+  }
+
+  #hamburger-menu:hover {
+    text-shadow: 0 0 5px rgb(238, 9, 9);
+  }
+
+  .navbar-nav {
+    margin-top: 10px;
+    background-color: rgb(226, 207, 207);
+  }
+}
+
+/* Blog container untuk layout bersebelahan */
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Grid untuk artikel */
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.menu-card h3 {
+  font-size: 1.2rem;
+  margin: 1rem;
+  color: #333;
+}
