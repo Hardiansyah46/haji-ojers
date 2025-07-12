@@ -17,7 +17,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background: red;
+  background: rgb(219, 201, 201);
   color: red;
   font-size: 16px;
   line-height: 1.6;
@@ -90,7 +90,7 @@ a {
 /* === SECTION BERITA === */
 
 .menu {
-  padding: 4rem 2rem;
+  padding: 4rem 0;
   background-color: #fefefe;
 }
 
@@ -118,6 +118,7 @@ a {
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
+  margin-top: auto;
 }
 
 .menu-card:hover {
@@ -249,10 +250,13 @@ footer .credit {
 .blog-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 2rem 2rem 2.5rem;
 }
 
-/* Grid untuk artikel */
+.menu {
+  padding: 4rem 0;
+}
+
 .row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -260,21 +264,14 @@ footer .credit {
 }
 
 .menu-card {
+  border: 1px solid #ccc;
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
-}
-
-.menu-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.menu-card h3 {
-  font-size: 1.2rem;
-  margin: 1rem;
-  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
