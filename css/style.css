@@ -17,7 +17,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background: rgb(236, 207, 207);
+  background: rgb(230, 222, 222);
   color: red;
   font-size: 16px;
   line-height: 1.6;
@@ -89,82 +89,75 @@ a {
 }
 /* === SECTION BERITA === */
 
+.menu:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+}
+
 .menu {
-  padding: 4rem 0;
-  background-color: #612d2d;
+  padding: 2rem 1rem 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.menu h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 3rem;
-  color: #222;
+.blog-container {
+  padding: 0;
+  margin: 0;
+  background: transparent;
 }
 
-.menu h2 span {
-  color: #ec150e;
-}
-
-/* Grid Artikel */
 .row {
   display: grid;
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.8rem;
+  align-items: stretch;
 }
 
-/* Kartu Berita */
 .menu-card {
   background: #fff;
   border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
   text-align: left;
-  padding: 1.5rem;
-  height: 100%;
-  min-height: 450px; /* Samakan tinggi minimum */
-}
-
-.menu-card:hover {
-  transform: translateY(-5px);
+  transition: transform 0.3s ease;
 }
 
 .menu-card img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
   border-radius: 5px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .menu-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #333;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  color: #222;
 }
 
 .menu-card p {
-  font-size: 0.95rem;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
   color: #555;
-  margin-bottom: auto;
+  flex-grow: 1;
 }
 
 .menu-card .read-more {
-  margin-top: 1rem;
-  display: inline-block;
   background-color: #e91414;
-  color: white;
-  padding: 0.5rem 1rem;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  text-decoration: none;
+  align-self: flex-start;
 }
 
-.menu-card .read-more:hover {
-  background-color: #160e0b;
-  text-shadow: 0 0 5px rgb(238, 9, 9);
+.menu-card:hover {
+  transform: translateY(-4px);
 }
 
 /* === RESPONSIVE === */
@@ -180,15 +173,15 @@ a {
 
 /* Footer */
 footer {
-  /* background: var(--primary);
-  color: var(--white); */
+  background: red;
+  color: black;
   text-align: center;
   padding: 1.5rem;
-  margin-top: 50px;
+  margin-top: 2rem;
 }
 
 footer a {
-  /* color: var(--white); */
+  color: black;
   margin: 0 0.5rem;
 }
 
@@ -253,36 +246,4 @@ footer .credit {
     margin-top: 10px;
     background-color: rgb(226, 207, 207);
   }
-}
-
-/* Blog container untuk layout bersebelahan */
-.blog-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem; /* Atur jarak dalam container */
-  margin-bottom: -8rem;
-}
-
-/* Container untuk kartu-kartu menu */
-.row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  align-items: stretch;
-}
-
-.menu-card {
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* agar isi tersebar rapi */
-  align-items: center;
-  text-align: center;
-  padding: 1.5rem;
-  height: 100%; /* penting untuk menyamakan tinggi */
-  min-height: 450px;
 }

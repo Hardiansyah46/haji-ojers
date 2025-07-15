@@ -1,200 +1,103 @@
 <html>
-    <!DOCTYPE html>
-<html lang="en" x-data="{ navOpen: false }">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hajiojer News</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../halaman2/style.css" />
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
-  </head>
-  <body>
-     <!-- Navbar start -->
-     <nav class="navbar" x-data>
-      <a href="#" class="navbar-logo">Hajiojer<span>News</span> </a>
+  <!DOCTYPE html>
+  <html lang="en" x-data="{ navOpen: false }">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Hajiojer News</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet"
+      />
+      <link rel="stylesheet" href="../halaman2/style.css" />
+      <script src="https://unpkg.com/feather-icons"></script>
+      <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      ></script>
+    </head>
+    <body>
+      <!-- Navbar start -->
+      <nav class="navbar" x-data>
+        <a href="#" class="navbar-logo">Hajiojer<span>News</span> </a>
 
-      <div class="navbar-nav">
-         <a href="../index.html#home">Home</a>
-        <a href="#olahraga">Olahraga</a>
-        <a href="#gayahidup">Gaya Hidup</a>
-        <a href="#karir">Karir</a>
-      </div>
+        <div class="navbar-nav">
+          <a href="../index.html#home">Home</a>
+          <a href="#olahraga">Olahraga</a>
+          <a href="#gayahidup">Gaya Hidup</a>
+          <a href="#karir">Karir</a>
+        </div>
 
-      <div class="navbar-extra">
-        <a href="https://www.instagram.com/hajiojernews" target="_blank" class="instagram">
-          <i data-feather="instagram"></i>
-        </a>
-        <a href="#" class="twitter">
-          <i data-feather="twitter"></i>
-        </a>
-        <a href="#" class="facebook">
-          <i data-feather="facebook"></i>
-        </a>
-        <a href="#" id="hamburger-menu">
-          <i data-feather="menu"></i>
-        </a>
-      </div>
-      
-    </nav>
-    <!-- Navbar end -->
+        <div class="navbar-extra">
+          <a
+            href="https://www.instagram.com/hajiojernews"
+            target="_blank"
+            class="instagram"
+          >
+            <i data-feather="instagram"></i>
+          </a>
+          <a href="#" class="twitter">
+            <i data-feather="twitter"></i>
+          </a>
+          <a href="#" class="facebook">
+            <i data-feather="facebook"></i>
+          </a>
+          <a href="#" id="hamburger-menu">
+            <i data-feather="menu"></i>
+          </a>
+        </div>
+      </nav>
+      <!-- Navbar end -->
 
-    <!-- My Java script -->
-    <script src="../halaman2/script.js"></script>
+      <!-- My Java script -->
+      <script src="../halaman2/script.js"></script>
 
-    <!-- Hero section -->
-<a href="index.html#home">Kembali ke Beranda</a>
+      <!-- SECTION MENU -->
+      <section class="menu">
+        <div class="blog-container">
+          <div class="row">
+            <article class="menu-card">
+              <img src="img/career1.jpg" alt="Karir 1" />
+              <h3>
+                Erik tohir menjalankan sepak bola indonesia dengan sangat baik
+              </h3>
+              <p>Sepak bola adalah alat pemersatu bangsa...</p>
+              <p>Lorem ipsum dolor sit amet.</p>
+              <a href="halaman2" target="_self" class="read-more"
+                >Baca Selengkapnya</a
+              >
+            </article>
+            <!-- Artikel ke-2 -->
+            <article class="menu-card">
+              <img src="img/career2.jpg" alt="Karir 2" />
+              <h3>Freelance vs Full-time</h3>
+              <p>
+                Kelebihan dan kekurangan bekerja secara freelance atau tetap?
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
+      <!-- ✅ Footer harus di luar section & card -->
+      <footer>
+        <div class="socials">
+          <a href="https://www.instagram.com/hajiojernews" target="_blank"
+            ><i data-feather="instagram"></i
+          ></a>
+          <a href="#"><i data-feather="twitter"></i></a>
+          <a href="#"><i data-feather="facebook"></i></a>
+        </div>
 
-     <!-- Hero end -->
-
-  <!-- OLahraga -->
-    
-
-  <section id="olahraga" class="read-more">
-    <h2><span>Olahraga</span> Berbalut Politik</h2>
-    <div class="row">
-      <article class="menu-card">
-        <img src="img/career1.jpg" alt="Karir 1" />
-        <h3>
-          Erik tohir menjalankan sepak bola indonesia dengan sangat baik
-        </h3>
-        <p>
-          Sepak bola adalah alat pemersatu bangsa tapi erik tohir mengubah itu
-          semua menjadi, kepentingan politknya.
-        </p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, unde! Amet ea obcaecati vel voluptas! Autem soluta quasi nulla sed illo ducimus est, sequi reiciendis temporibus dolore eos, officiis et.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <!-- <a href="#" class="read-more">Baca Selengkapnya</a>
-      </article>
-      <article class="menu-card">
-        <img src="img/career2.jpg" alt="Karir 2" />
-        <h3>Freelance vs Full-time</h3>
-        <p>Kelebihan dan kekurangan bekerja secara freelance atau tetap.</p>
-        <a href="#" class="read-more">Baca Selengkapnya</a>
-      </article>
-    </div>
-  </section>
-  <section id="olahraga" class="read-more">
-    <h2><span>Olahraga</span> Berbalut Politik</h2>
-    <div class="row">
-      <article class="menu-card">
-        <img src="img/career1.jpg" alt="Karir 1" />
-        <h3>
-          Erik tohir menjalankan sepak bola indonesia dengan sangat baik
-        </h3>
-        <p>
-          Sepak bola adalah alat pemersatu bangsa tapi erik tohir mengubah itu
-          semua menjadi, kepentingan politknya.
-        </p>
-        <a href="#" class="read-more">Baca Selengkapnya</a>
-      </article>
-      <article class="menu-card">
-        <img src="img/career2.jpg" alt="Karir 2" />
-        <h3>Freelance vs Full-time</h3>
-        <p>Kelebihan dan kekurangan bekerja secara freelance atau tetap.</p>
-        <a href="#" class="read-more">Baca Selengkapnya</a>
-      </article>
-    </div>
-  </section>
-  <section id="olahraga" class="read-more">
-    <h2><span>Olahraga</span> Berbalut Politik</h2>
-    <div class="row">
-      <article class="menu-card">
-        <img src="img/career1.jpg" alt="Karir 1" />
-        <h3>
-          Erik tohir menjalankan sepak bola indonesia dengan sangat baik
-        </h3>
-        <p>
-          Sepak bola adalah alat pemersatu bangsa tapi erik tohir mengubah itu
-          semua menjadi, kepentingan politknya.
-        </p>
-        <a href="#" class="read-more">Baca Selengkapnya</a>
-      </article>
-      <article class="menu-card">
-        <img src="img/career2.jpg" alt="Karir 2" />
-        <h3>Freelance vs Full-time</h3>
-        <p>Kelebihan dan kekurangan bekerja secara freelance atau tetap.</p>
-        <a href="#" class="read-more">Baca Selengkapnya</a>
-      </article>
-    </div>
-  </section>
-  <section id="olahraga" class="read-more">
-    <h2><span>Olahraga</span> Berbalut Politik</h2>
-    <div class="row">
-      <article class="menu-card">
-        <img src="img/career1.jpg" alt="Karir 1" />
-        <h3>
-          Erik tohir menjalankan sepak bola indonesia dengan sangat baik
-        </h3>
-        <p>
-          Sepak bola adalah alat pemersatu bangsa tapi erik tohir mengubah itu
-          semua menjadi, kepentingan politknya.
-        </p>
-        <a href="#" class="read-more">Baca Selengkapnya</a>
-      </article>
-      <article class="menu-card">
-        <img src="img/career2.jpg" alt="Karir 2" />
-        <h3>Freelance vs Full-time</h3>
-        <p>Kelebihan dan kekurangan bekerja secara freelance atau tetap.</p>
-        <a href="#" class="read-more">Baca Selengkapnya</a>
-      </article>
-    </div>
-  </section>
-  <section id="olahraga" class="read-more">
-    <h2><span>Olahraga</span> Berbalut Politik</h2>
-    <div class="row">
-      <article class="menu-card">
-        <img src="img/career1.jpg" alt="Karir 1" />
-        <h3>
-          Erik tohir menjalankan sepak bola indonesia dengan sangat baik
-        </h3>
-        <p>
-          Sepak bola adalah alat pemersatu bangsa tapi erik tohir mengubah itu
-          semua menjadi, kepentingan politknya.
-        </p>
-        <a href="#" class="read-more">Baca Selengkapnya</a>
-      </article>
-      <article class="menu-card">
-        <img src="img/career2.jpg" alt="Karir 2" />
-        <h3>Freelance vs Full-time</h3>
-        <p>Kelebihan dan kekurangan bekerja secara freelance atau tetap.</p>
-        <a href="#" class="read-more">Baca Selengkapnya</a>
-      </article>
-    </div>
-  </section> -->
-
-
-  <!-- Footer  -->
-  <footer>
-    <div class="socials">
-      <a href="https://www.instagram.com/hajiojernews" target="_blank"
-        ><i data-feather="instagram"></i
-      ></a>
-      <a href="#"><i data-feather="twitter"></i></a>
-      <a href="#"><i data-feather="facebook"></i></a>
-    </div>
-    <!-- <div class="links">
-      <a href="#home">Beranda</a>
-      <a href="#terkini">Terkini</a>
-      <a href="#kontak">Kontak</a>
-    </div> -->
-    <div class="credit">
-      <p>Created by <a href="#">Aji Hardiansyah</a>. &copy; 2025</p>
-    </div>
-  </footer>
-
-  <script>
-    feather.replace();
-  </script>
-  <body>
+        <div class="credit">
+          <p>Created by <a href="#">Aji Hardiansyah</a>. &copy; 2025</p>
+        </div>
+      </footer>
+    </body>
+    <script>
+      feather.replace();
+    </script>
+  </html>
 </html>

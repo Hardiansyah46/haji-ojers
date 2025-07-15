@@ -18,10 +18,11 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background: red;
+  background: rgb(230, 222, 222);
   color: red;
   font-size: 16px;
   line-height: 1.6;
+  padding: 1rem;
 }
 
 a {
@@ -64,7 +65,7 @@ a {
 .navbar-nav a:hover {
   background-color: rgb(226, 207, 207);
   text-shadow: 0 0 5px rgb(238, 9, 9);
-  color: red;
+  color: rgb(255, 0, 0);
 }
 
 .navbar .navbar-extra a {
@@ -91,19 +92,8 @@ a {
 /* === SECTION BERITA === */
 
 .menu {
-  padding: 4rem 2rem;
-  background-color: #fefefe;
-}
-
-.menu h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 3rem;
-  color: #222;
-}
-
-.menu h2 span {
-  color: #ec150e;
+  padding: 4rem 0;
+  padding-bottom: 5rem;
 }
 
 /* Grid Artikel */
@@ -119,6 +109,14 @@ a {
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  padding: 1.5rem;
+  height: 100%;
+  min-height: clamp(280px, 35vh, 400px);
 }
 
 .menu-card:hover {
@@ -129,29 +127,30 @@ a {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
 
 .menu-card h3 {
   font-size: 1.2rem;
-  margin: 1rem;
+  margin-bottom: 0.5rem;
   color: #333;
 }
 
 .menu-card p {
   font-size: 0.95rem;
-  margin: 0 1rem 1rem;
   color: #555;
+  margin-bottom: auto;
 }
 
 .menu-card .read-more {
+  margin-top: 1rem;
   display: inline-block;
-  margin: 0 1rem 1rem;
-  padding: 0.5rem 1rem;
   background-color: #e91414;
   color: white;
+  padding: 0.5rem 1rem;
   border-radius: 4px;
   font-size: 0.9rem;
-  transition: background 0.3s;
 }
 
 .menu-card .read-more:hover {
@@ -173,13 +172,14 @@ a {
 /* Footer */
 footer {
   background: red;
-  color: red;
+  color: black;
   text-align: center;
   padding: 1.5rem;
+  margin-top: 2rem;
 }
 
 footer a {
-  color: var(--white);
+  color: black;
   margin: 0 0.5rem;
 }
 
@@ -251,13 +251,19 @@ footer .credit {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  background-color: #f9f9f9; /* 💡 tambahkan warna latar lembut */
+  border-radius: 10px; /* opsional: biar gak kotak keras */
+  box-shadow: none; /* opsional: pemisah halus */
+  background: transparent;
 }
 
-/* Grid untuk artikel */
+/* Container untuk kartu-kartu menu */
 .row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 1.2rem;
+  align-items: stretch;
+  margin-top: -10px;
 }
 
 .menu-card {
@@ -266,16 +272,13 @@ footer .credit {
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
-}
-
-.menu-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.menu-card h3 {
-  font-size: 1.2rem;
-  margin: 1rem;
-  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* agar isi tersebar rapi */
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  height: 100%; /* penting untuk menyamakan tinggi */
+  min-height: 450px;
+  margin-bottom: 0;
 }
