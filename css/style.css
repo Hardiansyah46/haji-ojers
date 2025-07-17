@@ -87,6 +87,40 @@ a {
   color: red;
   display: inline-block;
 }
+
+/* Navbar search form */
+.navbar-extra .search-form {
+  position: absolute;
+  top: 100%;
+  right: 75;
+  background-color: #fff;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+}
+
+.navbar-extra .search-form.active {
+  transform: scaleY(1);
+}
+
+.navbar-extra .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: white;
+  padding: 1rem;
+}
+
+.navbar-extra .search-form label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  color: white;
+}
 /* === SECTION BERITA === */
 
 .menu:last-of-type {
@@ -245,5 +279,9 @@ footer .credit {
   .navbar-nav {
     margin-top: 10px;
     background-color: rgb(226, 207, 207);
+  }
+  .navbar .search-form {
+    width: 90%;
+    right: 2rem;
   }
 }
