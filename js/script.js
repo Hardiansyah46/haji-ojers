@@ -19,7 +19,7 @@ document.addEventListener("click", function (e) {
 });
 
 {
-  /* <script> */
+  // Untuk search form
 }
 const searchForm = document.querySelector(".search-form");
 const searchBox = document.querySelector("#search-box");
