@@ -1,30 +1,16 @@
-// Toggle class active
 const navbarNav = document.querySelector(".navbar-nav");
-
-// Ketika hamburger menu diklik
-document.querySelector("#hamburger-menu").onclick = (e) => {
-  e.stopPropagation(); // cegah bubbling klik ke document
-  navbarNav.classList.toggle("active");
-};
-
-// Klik di luar elemen navbar untuk menutup menu
-document.addEventListener("click", function (e) {
-  // Jika klik bukan di dalam .navbar-nav atau hamburger
-  if (
-    !navbarNav.contains(e.target) &&
-    !document.querySelector("#hamburger-menu").contains(e.target)
-  ) {
-    navbarNav.classList.remove("active");
-  }
-});
-
-{
-  // Untuk search form
-}
 const searchForm = document.querySelector(".search-form");
 const searchBox = document.querySelector("#search-box");
 const searchButton = document.querySelector("#search-button");
 
+// Klik hamburger menu toggle menu
+document.querySelector("#hamburger-menu").onclick = function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+  navbarNav.classList.toggle("active");
+};
+
+// Klik search button toggle form pencarian
 searchButton.addEventListener("click", function (e) {
   e.preventDefault();
   searchForm.classList.toggle("active");
@@ -32,4 +18,16 @@ searchButton.addEventListener("click", function (e) {
     searchBox.focus();
   }
 });
-// </script>
+
+// Klik di luar navbar dan search form untuk tutup menu dan form
+document.addEventListener("click", function (e) {
+  if (
+    !navbarNav.contains(e.target) &&
+    !document.querySelector("#hamburger-menu").contains(e.target)
+  ) {
+    navbarNav.classList.remove("active");
+  }
+  if (!searchForm.contains(e.target) && !searchButton.contains(e.target)) {
+    searchForm.classList.remove("active");
+  }
+});

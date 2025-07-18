@@ -19,6 +19,28 @@ body {
   background-color: #f7f4f4;
 }
 
+/* hamburger menu */
+.navbar-nav {
+  display: none;
+  list-style: none;
+  padding: 0;
+}
+.navbar-nav.active {
+  display: block;
+}
+/* Styling tombol hamburger */
+#hamburger-menu {
+  cursor: pointer;
+  font-size: 24px;
+  user-select: none;
+}
+.search-form {
+  display: none;
+}
+.search-form.active {
+  display: block;
+}
+
 /* Navbar Container */
 .navbar {
   display: flex;
