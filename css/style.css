@@ -74,6 +74,10 @@ body {
   gap: 2rem;
 }
 
+.navbar .navbar-nav {
+  transition: right 0.3s ease-in-out;
+}
+
 .navbar .navbar-nav a {
   text-decoration: none;
   font-size: 1.1rem;
@@ -85,6 +89,50 @@ body {
   color: rgb(240, 232, 234);
   text-shadow: 0 0 5px rgba(2, 0, 0, 0.3);
   background-color: #0a0202;
+}
+
+.search-form {
+  position: fixed;
+  top: 80px; /* Atur jarak dari atas navbar */
+  right: 75px; /* ← harus ada px! */
+  background-color: #fff;
+  width: 40rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10002;
+}
+
+.search-form.active {
+  transform: scaleY(1);
+}
+
+.search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: #333;
+  padding: 1rem;
+  border: none;
+  outline: none;
+}
+
+.search-form label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-left: 1rem;
+  color: crimson;
+}
+@media (max-width: 768px) {
+  .search-form {
+    width: 90%;
+    right: 5%;
+  }
 }
 
 /* Navbar Extra (search & menu) */
@@ -105,29 +153,19 @@ body {
   color: rgb(241, 234, 235);
 }
 
-/* Responsive Menu (Mobile View) */
-#hamburger-menu {
-  display: none;
-  cursor: pointer;
-}
-
-/* Search Form (Dropdown Style) */
 /* Navbar search form */
 .navbar .search-form {
   position: absolute;
   top: 100%;
-  right: 75px; /* ← Tambahkan satuan 'px' */
+  right: 75;
   background-color: #fff;
   width: 50rem;
   height: 5rem;
   display: flex;
   align-items: center;
-  padding: 0 1rem;
   transform: scaleY(0);
   transform-origin: top;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  transition: 0.3s;
 }
 
 .navbar .search-form.active {
@@ -138,17 +176,20 @@ body {
   height: 100%;
   width: 100%;
   font-size: 1.6rem;
-  color: rgb(250, 243, 243);
+  color: white;
   padding: 1rem;
-  border: none;
-  outline: none;
 }
 
 .navbar .search-form label {
   cursor: pointer;
   font-size: 2rem;
-  margin-left: 1rem;
-  color: crimson;
+  margin-right: 1.5rem;
+  color: white;
+}
+/* Responsive Menu (Mobile View) */
+#hamburger-menu {
+  display: none;
+  cursor: pointer;
 }
 
 /* Untuk membuka linknya */
@@ -359,6 +400,13 @@ body {
 
   .menu-card img {
     height: 160px;
+  }
+
+  @media (max-width: 600px) {
+    .search-form {
+      width: 90%;
+      right: 5%;
+    }
   }
 }
 
