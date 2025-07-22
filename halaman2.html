@@ -4,7 +4,7 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Hajiojer News</title>
+      <title>Bercap News</title>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
@@ -25,12 +25,12 @@
     <body>
       <!-- Navbar start -->
       <nav class="navbar" x-data>
-        <a href="#" class="navbar-logo">Hajiojer<span>News</span> </a>
+        <a href="#" class="navbar-logo">Bercap<span>News</span> </a>
 
         <div class="navbar-nav">
           <a href="index.html">Home</a>
           <a href="halaman2.html#olahraga">Olahraga</a>
-          <a href="halaman3.html#umum">Umum</a>
+          <a href="halaman3.html#opini">Opini</a>
           <a href="halaman4.html#hukum">Hukum</a>
         </div>
 
@@ -41,26 +41,68 @@
       </nav>
       <!-- Navbar end -->
 
-      <!-- My Java script -->
-      <script src="js/script.js"></script>
+      <!-- Search Form -->
+      <div class="search-form" id="search-form">
+        <input type="search" id="search-box" placeholder="search here..." />
+        <label for="search-box"><i data-feather="search"></i></label>
+      </div>
 
-      <!-- SECTION MENU -->
-      <section class="menu">
-        <div class="blog-container">
-          <div class="row">
-            <a href="halaman4.html#hukum" class="menu-card-link">
-              <article class="menu-card">
-                <img src="img/1.jpeg" alt="Hukum" />
-                <div class="card-content">
-                  <h3>Hukum Perundungan (Bullying) di Indonesia</h3>
-                  <p class="excerpt">
-                    Perundungan atau bullying adalah tindakan agresif yang
-                    menyakiti korban...
-                  </p>
-                </div>
-              </article>
-            </a>
-          </div>
+      <!-- SECTION: PEMAIN ASING -->
+      <section id="pemain-asing" class="full-article">
+        <div class="container">
+          <h2>Haruskah Pemain Asing Dibatasi di Liga Indonesia?</h2>
+          <img src="img/2.jpeg" alt="Pemain Asing" class="featured-img" />
+
+          <p>
+            Frank Van Kempen: Secara pribadi, saya lebih setuju jika jumlah
+            pemain asing di Liga Indonesia dibatasi. Pelatih Timnas U-20, Frank
+            van Kempen, juga pernah menyampaikan bahwa pembatasan pemain asing
+            bisa membantu perkembangan pemain lokal — terutama soal jam terbang
+            yang sangat mereka butuhkan.
+          </p>
+
+          <p>
+            Memang benar, Saya juga setuju dengan pendapat beliau,pemain asing
+            bisa menjadi panutan, bisa berbagi pengalaman, bahkan bisa
+            meningkatkan kualitas permainan. Tapi di sisi lain, jika kebanyakan
+            slot diisi pemain asing, bagaimana pemain lokal bisa berkembang?
+            Menit bermain mereka terancam berkurang.
+          </p>
+
+          <p>
+            Pertanyaannya, apakah klub-klub sanggup membayar pemain asing?
+            Beberapa klub menengah bahkan masih menunggak gaji. Apakah karena
+            manajemennya buruk? Atau karena pendapatan dari hak siar dan tiket
+            terlalu kecil?
+          </p>
+
+          <p>
+            Menurut saya, salah satu penyebabnya adalah ketidakseimbangan antara
+            pengeluaran dan pemasukan klub. Klub ingin bersaing, melihat lawan
+            memakai pemain asing, lalu ikut mengejar pemain asing berkualitas.
+            Akhirnya, pengeluaran melebihi pendapatan.
+          </p>
+
+          <p>
+            Ini jadi dilema. Di satu sisi, pemain asing memang bisa meningkatkan
+            persaingan. Tapi kalau tanpa pembatasan, klub-klub dengan ekonomi
+            lemah akan makin tertekan. Pemilik klub menengah harus punya
+            keberanian besar, karena mereka juga bertaruh banyak. Kalau
+            penontonnya sedikit dan pemasukan rendah, apa bisa bertahan?
+          </p>
+
+          <p>
+            Klub yang ingin bersaing sah-sah saja merekrut pemain asing. Tapi
+            tolong, PSSI dan PT LIB, perhatikan kondisi klub-klub kecil.
+            Ekosistem sepak bola harus dibangun secara berkelanjutan, bukan
+            hanya fokus pada klub besar. Kemenangan itu penting, tapi pembinaan
+            pemain lokal juga harus jadi prioritas.
+          </p>
+
+          <blockquote>
+            “Membatasi pemain asing bukan berarti menutup diri, tapi memberi
+            ruang bagi pemain lokal untuk berkembang dan bersinar.”
+          </blockquote>
         </div>
       </section>
 
@@ -93,5 +135,8 @@
     <script>
       feather.replace();
     </script>
+
+    <!-- My Java script -->
+    <script src="js/script.js"></script>
   </html>
 </html>

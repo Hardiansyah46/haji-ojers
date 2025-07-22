@@ -4,7 +4,7 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Hajiojer News</title>
+      <title>Bercap News</title>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
@@ -25,12 +25,12 @@
     <body>
       <!-- Navbar start -->
       <nav class="navbar" x-data>
-        <a href="#" class="navbar-logo">Hajiojer<span>News</span> </a>
+        <a href="#" class="navbar-logo">Bercap<span>News</span> </a>
 
         <div class="navbar-nav">
           <a href="index.html">Home</a>
           <a href="halaman2.html#olahraga">Olahraga</a>
-          <a href="halaman3.html#umum">Umum</a>
+          <a href="halaman3.html#opini">Opini</a>
           <a href="halaman4.html#hukum">Hukum</a>
         </div>
 
@@ -41,8 +41,11 @@
       </nav>
       <!-- Navbar end -->
 
-      <!-- My Java script -->
-      <script src="js/script.js"></script>
+      <!-- Search Form -->
+      <div class="search-form" id="search-form">
+        <input type="search" id="search-box" placeholder="search here..." />
+        <label for="search-box"><i data-feather="search"></i></label>
+      </div>
 
       <!-- SECTION MENU -->
       <section class="menu">
@@ -93,5 +96,8 @@
     <script>
       feather.replace();
     </script>
+
+    <!-- My Java script -->
+    <script src="js/script.js"></script>
   </html>
 </html>
