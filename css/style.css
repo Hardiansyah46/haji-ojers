@@ -43,17 +43,17 @@ body {
 
 /* Navbar Container */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #ec140d;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+  z-index: 9999; /* Tetap di atas */
+  background-color: #e91414;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Logo */
@@ -91,21 +91,62 @@ body {
   background-color: #0a0202;
 }
 
+/* Search Form (Dropdown Style) */
+/* DESKTOP */
 .search-form {
   position: fixed;
-  top: 80px; /* Atur jarak dari atas navbar */
-  right: 75px; /* ← harus ada px! */
-  background-color: #fff;
-  width: 40rem;
-  height: 3rem;
+  top: 5rem;
+  left: auto;
+  right: 1rem;
+  width: 300px;
+  background-color: white;
+  padding: 0.6rem 1rem;
   display: flex;
   align-items: center;
-  padding: 0 1rem;
+  gap: 0.5rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 10002;
+  z-index: 9998;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 0.3rem 1rem;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    margin-top: 0.3rem;
+    gap: 0.2rem;
+  }
+
+  .navbar-nav a {
+    font-size: 0.9rem;
+    padding: 0.3rem;
+  }
+
+  .search-form {
+    top: 4rem;
+    left: 1rem;
+    right: 1rem;
+    width: auto; /* biar gak fix lebar besar */
+    max-width: 250px; /* batasi ukuran maksimal */
+    margin: 0 auto;
+    padding: 0.5rem 0.7rem;
+    gap: 0.4rem;
+    flex-direction: row;
+  }
+
+  .search-form input {
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+  }
 }
 
 .search-form.active {
@@ -113,79 +154,14 @@ body {
 }
 
 .search-form input {
-  height: 100%;
-  width: 100%;
-  font-size: 1.6rem;
-  color: #333;
-  padding: 1rem;
-  border: none;
+  flex: 1;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   outline: none;
 }
 
-.search-form label {
-  cursor: pointer;
-  font-size: 2rem;
-  margin-left: 1rem;
-  color: crimson;
-}
-@media (max-width: 768px) {
-  .search-form {
-    width: 90%;
-    right: 5%;
-  }
-}
-
-/* Navbar Extra (search & menu) */
-.navbar .navbar-extra {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.navbar .navbar-extra a {
-  color: #0e0202;
-  font-size: 1.5rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.navbar .navbar-extra a:hover {
-  color: rgb(241, 234, 235);
-}
-
-/* Navbar search form */
-.navbar .search-form {
-  position: absolute;
-  top: 100%;
-  right: 75;
-  background-color: #fff;
-  width: 50rem;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: 0.3s;
-}
-
-.navbar .search-form.active {
-  transform: scaleY(1);
-}
-
-.navbar .search-form input {
-  height: 100%;
-  width: 100%;
-  font-size: 1.6rem;
-  color: white;
-  padding: 1rem;
-}
-
-.navbar .search-form label {
-  cursor: pointer;
-  font-size: 2rem;
-  margin-right: 1.5rem;
-  color: white;
-}
 /* Responsive Menu (Mobile View) */
 #hamburger-menu {
   display: none;
@@ -560,6 +536,10 @@ footer .credit a:hover {
   .navbar-nav {
     margin-top: 10px;
     background-color: rgb(226, 207, 207);
+  }
+  .navbar .search-form {
+    width: 90%;
+    right: 2rem;
   }
 }
 
