@@ -16,43 +16,7 @@ body {
   font-family: "Poppins", sans-serif;
   line-height: 1.5;
   background-color: #f7f4f4;
-}
-
-/* Reset sederhana */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
   font-family: Arial, sans-serif;
-}
-
-/* Navbar Container */
-.navbar {
-  background-color: #fff;
-  padding: 1rem 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Logo */
-.navbar-logo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #0a0202;
-  text-decoration: none;
-}
-.navbar-logo span {
-  color: #d00;
 }
 
 /* Navbar Center - menu desktop */
@@ -61,16 +25,15 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
-  background-color: #fff;
+  height: 90px;
+  background-color: #df0a0a;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  z-index: 10000; /* tinggi supaya selalu di atas */
+  z-index: 10000; /* under navbar-center.active */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 .navbar-center {
   display: flex;
   gap: 2rem;
@@ -127,25 +90,26 @@ body {
 
 /* Mobile styles */
 @media (max-width: 768px) {
-  /* Sembunyikan navbar-center default */
   .navbar-center {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -100%; /* hidden by default */
     width: 250px;
-    height: 100vh;
+    height: 50vh;
     background-color: #f7f4f4;
     flex-direction: column;
     padding: 2rem;
     gap: 1.5rem;
     align-items: flex-start;
     transition: right 0.3s ease;
-    z-index: 9999;
     overflow-y: auto;
     justify-content: flex-start;
+    z-index: 9999; /* default layer */
   }
+
   .navbar-center.active {
     right: 0;
+    z-index: 10001; /* over navbar */
   }
 
   /* Tampilkan hamburger */
@@ -166,9 +130,9 @@ body {
 }
 
 /* Body padding supaya konten tidak ketutupan navbar */
-body {
+/* body {
   padding-top: 70px;
-}
+} */
 
 /* Untuk membuka linknya */
 
@@ -251,7 +215,6 @@ body {
   font-family: "Segoe UI", sans-serif;
   max-width: 800px;
   margin: auto;
-  margin-top: 3rem;
 }
 
 .full-article h2 {
@@ -320,139 +283,47 @@ body {
 .navbar-logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: #070505;
   text-decoration: none;
 }
 
 .navbar-logo span {
-  color: #d00;
-}
-
-/* Menu tengah */
-.navbar-nav {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex: 1;
-}
-
-.navbar-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-/* Icon kanan */
-.navbar-extra {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* Icon style */
-.navbar-extra a {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-/* Responsive Layout */
-@media (max-width: 768px) {
-  .navbar-container {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .navbar-nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    flex-direction: column;
-    background: #f7f4f4;
-    width: 80%;
-    max-width: 250px;
-    height: 100vh;
-    padding: 2rem;
-    gap: 1.5rem;
-    align-items: flex-start;
-    transition: right 0.3s ease;
-    z-index: 1001;
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar-nav.active {
-    right: 0;
-  }
-
-  .navbar-extra a {
-    display: block;
-  }
-
-  /* Hide menu in mobile by default */
-  .navbar-nav a {
-    font-size: 1rem;
-  }
-
-  /* SEARCH OVERLAY */
-  .search-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10001;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    padding: 1rem;
-  }
-
-  .search-overlay.active {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .search-container {
-    background: #fff;
-    padding: 1rem 1rem;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    align-items: stretch;
-    width: 100%;
-    max-width: 90vw;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  .search-container input[type="search"] {
-    width: 100%;
-    padding: 0.6rem 0.9rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-  }
-
-  .search-container button {
-    background: var(--primary, #d00);
-    color: white;
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-
-  .search-container button:hover {
-    background: #c60b0b;
-  }
+  color: rgb(241, 17, 17);
 }
 
 /* === SECTION BERITA === */
+.blog-container {
+  max-width: 1200px;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Container untuk kartu-kartu menu */
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  height: 100%;
+  min-height: 450px;
+}
 
 .menu {
   padding: 4rem 0;
@@ -660,41 +531,4 @@ footer .credit a:hover {
     margin-top: 10px;
     background-color: rgb(226, 207, 207);
   }
-}
-
-/* Blog container untuk layout bersebelahan */
-.blog-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #f9f9f9; /* 💡 tambahkan warna latar lembut */
-  border-radius: 10px; /* opsional: biar gak kotak keras */
-  box-shadow: none; /* opsional: pemisah halus */
-  background: transparent;
-}
-
-/* Container untuk kartu-kartu menu */
-.row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.2rem;
-  align-items: stretch;
-  margin-top: -10px;
-}
-
-.menu-card {
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  padding: 1.5rem;
-  height: 100%;
-  min-height: 450px;
-  margin-bottom: 0;
 }
