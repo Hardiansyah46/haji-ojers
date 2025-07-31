@@ -21,19 +21,36 @@ body {
 
 /* Navbar Center - menu desktop */
 .navbar {
+  background: #fd0303;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #eee;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  height: 90px;
-  background-color: #df0a0a;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-  z-index: 10000; /* under navbar-center.active */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  z-index: 1000000;
 }
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #070505;
+  text-decoration: none;
+}
+
+.navbar-logo span {
+  color: rgb(245, 242, 242);
+}
+
 .navbar-center {
   display: flex;
   gap: 2rem;
@@ -52,8 +69,8 @@ body {
 
 .navbar-center a:hover {
   background-color: #0a0202;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  color: #ff0606;
+  text-shadow: 0 0 5px rgb(250, 248, 248);
 }
 
 /* Navbar right (hamburger) */
@@ -93,7 +110,7 @@ body {
   .navbar-center {
     position: fixed;
     top: 0;
-    right: -100%; /* hidden by default */
+    right: -100%;
     width: 250px;
     height: 50vh;
     background-color: #f7f4f4;
@@ -104,7 +121,6 @@ body {
     transition: right 0.3s ease;
     overflow-y: auto;
     justify-content: flex-start;
-    z-index: 9999; /* default layer */
   }
 
   .navbar-center.active {
@@ -128,11 +144,6 @@ body {
     font-size: 1.8rem;
   }
 }
-
-/* Body padding supaya konten tidak ketutupan navbar */
-/* body {
-  padding-top: 70px;
-} */
 
 /* Untuk membuka linknya */
 
@@ -261,34 +272,6 @@ body {
   .menu-card {
     padding: 10px;
   }
-}
-/* Default layout */
-.navbar {
-  background: #fff;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #eee;
-  position: relative;
-  z-index: 1000;
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.navbar-logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #070505;
-  text-decoration: none;
-}
-
-.navbar-logo span {
-  color: rgb(241, 17, 17);
 }
 
 /* === SECTION BERITA === */
