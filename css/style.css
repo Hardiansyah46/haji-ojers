@@ -82,12 +82,19 @@ body {
 }
 
 /* Mobile search form (hidden desktop) */
+#hamburger-menu {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #0a0202;
+}
+
 .mobile-search {
   display: none;
   margin-top: 1.5rem;
 }
 
-.mobile-search input[type="search"] {
+.mobile-search input {
   width: 100%;
   padding: 0.5rem;
   border-radius: 5px;
@@ -105,8 +112,16 @@ body {
   cursor: pointer;
 }
 
-/* Mobile styles */
+#searchResults {
+  margin-top: 1rem;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
+  #hamburger-menu {
+    display: block;
+  }
+
   .navbar-center {
     position: fixed;
     top: 0;
@@ -119,32 +134,16 @@ body {
     gap: 1.5rem;
     align-items: flex-start;
     transition: right 0.3s ease;
-    overflow-y: auto;
-    justify-content: flex-start;
   }
 
   .navbar-center.active {
     right: 0;
-    z-index: 10001; /* over navbar */
   }
 
-  /* Tampilkan hamburger */
-  #hamburger-menu {
-    display: block;
-  }
-
-  /* Tampilkan search form di sidebar */
   .mobile-search {
     display: block;
-    width: 100%;
-  }
-
-  /* Navbar logo tetap di kiri */
-  .navbar-logo {
-    font-size: 1.8rem;
   }
 }
-
 /* Untuk membuka linknya */
 
 .menu-card-link {
@@ -222,7 +221,7 @@ body {
 /* Artikel lengkapnya  */
 
 .full-article {
-  padding: 40px 20px;
+  padding: 70px 60px;
   font-family: "Segoe UI", sans-serif;
   max-width: 800px;
   margin: auto;
@@ -262,15 +261,22 @@ body {
 }
 /* Reset ukuran font h3 untuk layar kecil */
 @media screen and (max-width: 600px) {
-  h3 {
-    font-size: 1.2rem;
-    line-height: 1.3;
-    padding: 0 10px;
-    word-wrap: break-word;
+  .container {
+    padding: 12px;
+    text-align: left;
   }
 
-  .menu-card {
-    padding: 10px;
+  .container h3 {
+    font-size: 1.7rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    padding: 0;
+    color: #222;
+  }
+
+  .container .excerpt {
+    font-size: 0.95rem;
+    color: #444;
   }
 }
 
