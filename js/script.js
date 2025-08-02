@@ -49,3 +49,16 @@ document.addEventListener("click", (e) => {
     navbarCenter.classList.remove("active");
   }
 });
+
+// semua pencarianya
+window.addEventListener("DOMContentLoaded", () => {
+  const row = document.querySelector(".row");
+  const cards = Array.from(document.querySelectorAll(".menu-card-link"));
+
+  // Acak urutan kartu
+  const shuffled = cards.sort(() => 0.5 - Math.random());
+
+  // Kosongkan container, lalu masukkan kembali dalam urutan acak
+  row.innerHTML = "";
+  shuffled.forEach((card) => row.appendChild(card));
+});
