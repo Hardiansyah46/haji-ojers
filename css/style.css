@@ -316,7 +316,6 @@ ul li a:hover {
 
 .blog-container {
   max-width: 800px;
-  margin: auto;
 }
 
 .menu .row {
@@ -451,7 +450,6 @@ ul li a:hover {
 /* === SECTION BERITA === */
 .blog-container {
   max-width: 1200px;
-  margin: 0 auto;
   padding: 2rem;
   background-color: #f9f9f9;
   border-radius: 10px;
