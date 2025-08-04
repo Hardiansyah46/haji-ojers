@@ -91,7 +91,8 @@ body {
 /* Konten utama */
 .main {
   flex: 3;
-  width: 600px;
+  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
@@ -131,6 +132,30 @@ ul li a:hover {
   .sidebar {
     width: 100%;
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout,
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .main,
+  .main-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 1rem;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .content-wrapper {
+    padding: 1rem;
   }
 }
 
@@ -367,11 +392,15 @@ ul li a:hover {
   max-width: 800px;
 }
 
-.menu .row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
+@media (max-width: 768px) {
+  .menu .row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .menu-card-link {
+    flex: 1 1 100%;
+  }
 }
 
 .menu-card-link {
