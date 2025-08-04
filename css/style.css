@@ -47,15 +47,15 @@ body {
 }
 
 /* Navbar Center - menu desktop */
-.navbar {
+/* .navbar {
   background-color: white;
   position: sticky;
   top: 0;
   z-index: 999;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
-}
-.navbar a {
+} */
+/* .navbar a {
   color: #333;
   text-decoration: none;
   margin: 0 10px;
@@ -76,7 +76,7 @@ body {
   .navbar-center {
     display: none;
   }
-}
+} */
 
 /* Menu layout Content*/
 .content-wrapper {
@@ -88,14 +88,12 @@ body {
   align-items: flex-start;
 }
 
-/* Konten utama */
 .main {
   flex: 3;
   width: 600px;
   box-sizing: border-box;
 }
 
-/* Sidebar */
 .sidebar {
   flex: 1;
   background-color: #f0f0f0;
@@ -359,20 +357,20 @@ ul li a:hover {
 
 /* Menu ke dua */
 
-.menu {
+/* .menu {
   padding: 20px;
-}
+} */
 
-.blog-container {
+/* .blog-container {
   max-width: 800px;
-}
+} */
 
-.menu .row {
+/* .menu .row {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
-}
+} */
 
 .menu-card-link {
   flex: 1 1 calc(33.333% - 20px);
@@ -534,14 +532,14 @@ ul li a:hover {
 }
 
 /* === SECTION BERITA === */
-.blog-container {
+/* .blog-container {
   max-width: 1200px;
   padding: 2rem;
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: none;
   background: transparent;
-}
+} */
 
 /* Container untuk kartu-kartu menu */
 .row {
@@ -567,10 +565,10 @@ ul li a:hover {
   min-height: 450px;
 }
 
-.menu {
+/* .menu {
   padding: 4rem 0;
   padding-bottom: 5rem;
-}
+} */
 
 /* Grid Artikel */
 .row {
