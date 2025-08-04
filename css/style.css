@@ -58,8 +58,45 @@ body {
 
 .main {
   flex: 3;
-  width: 600px;
+  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
+}
+
+.main-content {
+  flex: 3;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .layout,
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .main,
+  .main-content,
+  .content-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .menu-card-link {
+    flex: 1 1 100%;
+  }
 }
 
 .sidebar {
