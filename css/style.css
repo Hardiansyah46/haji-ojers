@@ -169,16 +169,19 @@ ul li a:hover {
 
 .main-content {
   flex: 3;
-  margin-top: 80px;
+  margin-top: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 1rem;
   box-sizing: border-box;
 }
 
 .sidebar {
   flex: 1;
-  background-color: #f0f0f0;
-  padding: 15px;
-  border-radius: 6px;
-  margin-top: 80px;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .menu-card {
@@ -234,16 +237,41 @@ ul li a:hover {
 }
 
 @media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column;
+  .main,
+  .main-content,
+  .full-article,
+  .content-wrapper,
+  .blog-container,
+  .menu {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 1rem !important;
+    box-sizing: border-box;
+  }
+
+  .layout,
+  .main-layout {
+    flex-direction: column !important;
   }
 
   .sidebar {
-    width: 100%;
-    border-left: none;
-    border-top: 1px solid #ccc;
+    margin-top: 1.5rem !important;
+    width: 100% !important;
+  }
+
+  .full-article h2 {
+    font-size: 20px;
+  }
+
+  .full-article p,
+  .full-article ul,
+  .full-article ol {
+    font-size: 15px;
+    line-height: 1.6;
   }
 }
+
 /* navbar */
 .navbar {
   background: #e91414;
