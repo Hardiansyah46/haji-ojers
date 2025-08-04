@@ -35,10 +35,6 @@ body {
   flex-direction: column;
 }
 
-main {
-  flex: 1;
-}
-
 /* Iklan */
 .ad-container {
   margin: 20px auto;
@@ -82,70 +78,63 @@ main {
   }
 }
 
-/* Menu layout */
-.main-layout {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.main-content {
-  flex: 1 1 65%;
-  min-width: 300px;
-}
-
-.sidebar {
-  flex: 1 1 30%;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 0.95rem;
-  margin-top: 30px;
-}
-
-.sidebar h3 {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-  color: #333;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.sidebar ul li {
-  margin-bottom: 10px;
-}
-
-.sidebar ul li a {
-  color: #0077cc;
-  text-decoration: none;
-}
-
-.sidebar ul li a:hover {
-  text-decoration: underline;
-}
-@media (max-width: 768px) {
-  .main-layout {
-    flex-direction: column;
-  }
-
-  .main-content,
-  .sidebar {
-    width: 100%;
-  }
-}
-
-/* Layout dasar */
+/* Menu layout Content*/
 .content-wrapper {
   padding: 20px;
 }
 
+.layout {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Konten utama */
+.main {
+  flex: 3;
+  width: 600px;
+  box-sizing: border-box;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+/* Tambahan styling */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* Layout dasar */
 .main-layout {
   display: flex;
   gap: 20px;
@@ -155,7 +144,8 @@ main {
 
 .main-content {
   flex: 3;
-  margin-top: 30px;
+  margin-top: 80px;
+  box-sizing: border-box;
 }
 
 .sidebar {
@@ -163,7 +153,7 @@ main {
   background-color: #f0f0f0;
   padding: 15px;
   border-radius: 6px;
-  float: left;
+  margin-top: 80px;
 }
 
 .menu-card {
@@ -227,10 +217,9 @@ ul li a:hover {
     width: 100%;
     border-left: none;
     border-top: 1px solid #ccc;
-    margin-top: 20px;
   }
 }
-
+/* navbar */
 .navbar {
   background: #e91414;
   padding: 1rem 2rem;
@@ -239,7 +228,7 @@ ul li a:hover {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000000;
+  z-index: 1000;
 }
 
 .navbar-container {
@@ -420,65 +409,6 @@ ul li a:hover {
   color: #666;
 }
 
-/* main content */
-/* .main-layout {
-  padding: 70px 60px;
-  font-family: "Segoe UI", sans-serif;
-  max-width: 800px;
-  float: left;
-}
-
-.main-layout h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.featured-img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
-
-.main-layout p,
-.main-layout ul,
-.main-layout ol {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.main-layout ul,
-.main-layout ol {
-  padding-left: 20px;
-}
-
-.main-layout blockquote {
-  margin: 30px 0;
-  font-style: italic;
-  padding-left: 20px;
-  border-left: 3px solid #ccc;
-  color: #555;
-}
-@media (max-width: 600px) {
-  .main-layout {
-    padding: 40px 20px;
-  }
-
-  .main-layout h2 {
-    font-size: 20px;
-    margin-bottom: 16px;
-  }
-
-  .main-layout p,
-  .main-layout ul,
-  .main-layout ol {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 14px;
-  }
-} */
-
 /* Artikel lengkapnya  */
 
 .full-article {
@@ -519,15 +449,33 @@ ul li a:hover {
   color: #555;
 }
 @media (max-width: 600px) {
-  .full-article {
-    padding: 40px 20px;
+  /* Layout kolom jadi tumpuk */
+  .layout {
+    flex-direction: column;
   }
 
+  /* Konten utama agar fleksibel di layar kecil */
+  .main {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .full-article {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 16px;
+    box-sizing: border-box;
+  }
+
+  /* Heading lebih kecil dan responsif */
   .full-article h2 {
     font-size: 20px;
     margin-bottom: 16px;
   }
 
+  /* Konten teks lebih ramping */
   .full-article p,
   .full-article ul,
   .full-article ol {
@@ -536,31 +484,52 @@ ul li a:hover {
     margin-bottom: 14px;
   }
 
+  /* Gambar artikel menyesuaikan layar */
   .featured-img {
+    width: 100%;
+    height: auto;
     margin-bottom: 16px;
     border-radius: 4px;
+    display: block;
   }
 
+  /* Kutipan di artikel */
   .full-article blockquote {
     font-size: 15px;
     margin: 24px 0;
     padding-left: 15px;
+    border-left: 4px solid #ccc;
+    color: #555;
   }
 
-  .container {
-    padding: 20px 15px;
+  /* Sidebar di bawah konten, penuh lebar */
+  .sidebar {
+    width: 100%;
+    margin-top: 24px;
+    padding: 16px;
+    box-sizing: border-box;
   }
 
-  .container h3 {
-    font-size: 1.5rem;
-    line-height: 1.3;
+  .sidebar h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .sidebar ul li {
+    font-size: 15px;
     margin-bottom: 8px;
-    color: #222;
   }
 
-  .container .excerpt {
-    font-size: 0.9rem;
-    color: #444;
+  .sidebar ul li a {
+    color: #0077cc;
+  }
+
+  /* Reset spacing agar tidak out of bounds */
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
 }
 
