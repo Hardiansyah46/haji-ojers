@@ -91,8 +91,7 @@ body {
 /* Konten utama */
 .main {
   flex: 3;
-  width: 100%;
-  max-width: 100%;
+  width: 600px;
   box-sizing: border-box;
 }
 
@@ -124,7 +123,7 @@ ul li a:hover {
 }
 
 /* Responsif untuk layar kecil */
-@media (max-width: 768px) {
+@media (max-width: 450px) {
   .layout {
     flex-direction: column;
   }
@@ -132,30 +131,6 @@ ul li a:hover {
   .sidebar {
     width: 100%;
     margin-top: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .layout,
-  .main-layout {
-    flex-direction: column;
-  }
-
-  .main,
-  .main-content {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0 1rem;
-  }
-
-  .sidebar {
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  .content-wrapper {
-    padding: 1rem;
   }
 }
 
@@ -233,7 +208,7 @@ ul li a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 450px) {
   .content-wrapper {
     flex-direction: column;
   }
@@ -569,27 +544,11 @@ ul li a:hover {
 }
 
 /* Container untuk kartu-kartu menu */
-@media (max-width: 600px) {
-  .row {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 600px) {
-  .main-layout,
-  .layout,
-  .menu,
-  .main-content,
-  .content-wrapper {
-    padding: 10px !important;
-    margin: 0 auto !important;
-    max-width: 100% !important;
-    box-sizing: border-box;
-  }
-
-  .menu-card {
-    min-height: unset;
-    height: auto;
-  }
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.2rem;
+  align-items: stretch;
 }
 
 .menu-card {
