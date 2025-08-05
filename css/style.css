@@ -84,7 +84,6 @@ body {
 .content-wrapper {
   width: 100%;
   box-sizing: border-box;
-  margin-top: 90px;
 }
 
 .layout {
@@ -93,10 +92,14 @@ body {
 
 .main {
   width: 800px;
-  margin-top: -110px;
 }
 
-@media (max-width: 768px) {
+.header {
+  width: 900px;
+  margin-top: 70px;
+}
+
+@media (max-width: 600px) {
   .layout {
     flex-direction: column;
   }
@@ -104,7 +107,7 @@ body {
   .main {
     width: 100%;
     padding-left: 0;
-    margin-top: -130px;
+    margin-top: -30px;
   }
 
   .sidebar {
@@ -142,14 +145,12 @@ ul li a:hover {
 }
 
 /* Layout dasar */
-
 .menu-card {
   border: 1px solid #ddd;
   border-radius: 6px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
@@ -205,24 +206,6 @@ ul li a:hover {
 
 .menu-card-link:hover {
   transform: translateY(-5px);
-}
-
-.card-content {
-  padding: 0;
-}
-
-.card-content {
-  padding: 15px;
-}
-
-.card-content h3 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
-
-.card-content .excerpt {
-  font-size: 0.9rem;
-  color: #666;
 }
 
 /* Iklan */
@@ -308,9 +291,9 @@ ul li a:hover {
 /* Artikel lengkapnya  */
 
 .full-article {
-  padding: 70px 60px;
   font-family: "Segoe UI", sans-serif;
   max-width: 800px;
+  margin-top: 70px;
 }
 
 .full-article h2 {
@@ -348,8 +331,8 @@ ul li a:hover {
 /* Sidebar di bawah konten, penuh lebar */
 .sidebar {
   width: 200px;
-  margin-top: 24px;
-  padding: 16px;
+  margin-top: 50px;
+  padding: 90px 10px;
   box-sizing: border-box;
 }
 
