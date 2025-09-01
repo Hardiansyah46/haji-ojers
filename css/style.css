@@ -422,7 +422,6 @@ ul li a:hover {
   text-decoration: underline;
 }
 
-<<<<<<< HEAD
 /* Layout dasar */
 .menu-card {
   border: 1px solid #ddd;
@@ -494,8 +493,6 @@ ul li a:hover {
   border: 1px dashed #ccc;
 }
 
-=======
->>>>>>> 4bdc2a3 (mengubah tampilanya dari index.html jadi index.php)
 /* Navbar right (hamburger) */
 #hamburger-menu {
   display: none;
