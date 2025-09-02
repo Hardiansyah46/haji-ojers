@@ -1,36 +1,38 @@
-<?php 
-$base = "/haji-ojers";
+<?php
 $perPage = 5;
 
-// Filter artikel berdasarkan kategori
+// Filter artikel berdasarkan kategori (case-insensitive)
 $filtered_articles = [];
-if($cat){
-    foreach($articles as $a){
-        if($a['category'] === $cat){
+if ($cat) {
+    foreach ($articles as $a) {
+        if (strtolower($a['category']) === strtolower($cat)) {
             $filtered_articles[] = $a;
         }
     }
 }
 
-$articles_sorted = array_reverse($filtered_articles);
+// Urutkan terbaru dulu
+$articles_sorted  = array_reverse($filtered_articles);
 $display_articles = array_slice($articles_sorted, 0, $perPage);
 
+// Sidebar tetap menampilkan artikel populer
 $sidebar_items = array_slice(array_reverse($articles), 0, 5);
 
-$title = "Kategori: ".ucfirst($cat);
+$title = $cat ? "Kategori: " . ucfirst($cat) : "Berita Terbaru";
 ?>
 
 <div class="layout">
   <main class="main">
     <h2><?= $title ?></h2>
+
     <div id="articles-container" class="row">
       <?php foreach($display_articles as $article): ?>
         <div class="menu-card">
-          <a href="<?= $base ?>/<?= $article['category'] ?>/<?= $article['slug'] ?>" class="menu-card-link">
-            <img src="<?= $article['img'] ?>" alt="<?= $article['alt'] ?>" class="featured-img">
+          <a href="/<?= strtolower($article['category']) ?>/<?= strtolower($article['slug']) ?>" class="menu-card-link">
+            <img src="/<?= $article['img'] ?>" alt="<?= htmlspecialchars($article['alt']) ?>" class="featured-img">
             <div class="card-content">
-              <h3><?= $article['title'] ?></h3>
-              <p class="excerpt"><?= $article['excerpt'] ?></p>
+              <h3><?= htmlspecialchars($article['title']) ?></h3>
+              <p class="excerpt"><?= htmlspecialchars($article['excerpt']) ?></p>
             </div>
           </a>
         </div>
@@ -53,47 +55,17 @@ $title = "Kategori: ".ucfirst($cat);
     </div>
   </main>
 
+  <!-- Sidebar -->
   <aside class="sidebar">
     <h3>Artikel Populer</h3>
     <ul>
       <?php foreach($sidebar_items as $item): ?>
-        <li><a href="<?= $base ?>/<?= $item['category'] ?>/<?= $item['slug'] ?>"><?= $item['title'] ?></a></li>
+        <li>
+          <a href="/<?= strtolower($item['category']) ?>/<?= strtolower($item['slug']) ?>">
+            <?= htmlspecialchars($item['title']) ?>
+          </a>
+        </li>
       <?php endforeach; ?>
     </ul>
   </aside>
 </div>
-
-<!-- JS untuk View More -->
-<script>
-const articles = <?= json_encode($articles_sorted) ?>;
-let perPage = <?= $perPage ?>;
-let current = <?= count($display_articles) ?>;
-
-function renderArticles() {
-  const container = document.getElementById('articles-container');
-  const nextArticles = articles.slice(current, current + perPage);
-
-  nextArticles.forEach(article => {
-    const card = document.createElement('div');
-    card.className = 'menu-card';
-    card.innerHTML = `
-      <a href="<?= $base ?>/${article.category}/${article.slug}" class="menu-card-link">
-        <img src="${article.img}" alt="${article.alt}" class="featured-img">
-        <div class="card-content">
-          <h3>${article.title}</h3>
-          <p class="excerpt">${article.excerpt}</p>
-        </div>
-      </a>
-    `;
-    container.appendChild(card);
-  });
-
-  current += perPage;
-
-  if(current >= articles.length) {
-    document.getElementById('loadMoreBtn').style.display = 'none';
-  }
-}
-
-document.getElementById('loadMoreBtn')?.addEventListener('click', renderArticles);
-</script>

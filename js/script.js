@@ -1,64 +1,87 @@
-const hamburger = document.getElementById("hamburger-menu");
-const navbarCenter = document.querySelector(".navbar-center");
-const mobileSearchInput = document.getElementById("mobileSearchInput");
-const mobileSearchButton = document.getElementById("mobileSearchButton");
-const searchResults = document.getElementById("searchResults");
+window.addEventListener("DOMContentLoaded", () => {
+  // ===== HAMBURGER MENU =====
+  const hamburger = document.getElementById("hamburger-menu");
+  const navbarCenter = document.querySelector(".navbar-center");
+  if (hamburger && navbarCenter) {
+    hamburger.addEventListener("click", (e) => {
+      e.preventDefault();
+      navbarCenter.classList.toggle("active");
+    });
+    document.addEventListener("click", (e) => {
+      if (!navbarCenter.contains(e.target) && !hamburger.contains(e.target)) {
+        navbarCenter.classList.remove("active");
+      }
+    });
+  }
 
-// Toggle menu
-hamburger.addEventListener("click", (e) => {
-  e.preventDefault();
-  navbarCenter.classList.toggle("active");
-});
+  // ===== SEARCH =====
+  const mobileSearchInput = document.getElementById("mobileSearchInput");
+  const mobileSearchButton = document.getElementById("mobileSearchButton");
+  const searchResults = document.getElementById("searchResults");
+  const articleLinks = document.querySelectorAll(".menu-card-link");
+  let articlesData = [];
 
-// Search logic
-const articles = Array.from(document.querySelectorAll(".menu-card-link")).map(
-  (link) => {
-    return {
+  if (articleLinks.length > 0) {
+    articlesData = Array.from(articleLinks).map((link) => ({
       element: link,
       title: link.querySelector("h3").textContent.toLowerCase(),
       excerpt: link.querySelector(".excerpt").textContent.toLowerCase(),
-    };
+    }));
   }
-);
 
-mobileSearchButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  const keyword = mobileSearchInput.value.trim().toLowerCase();
-  let matchCount = 0;
+  if (mobileSearchButton && mobileSearchInput) {
+    mobileSearchButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      const keyword = mobileSearchInput.value.trim().toLowerCase();
+      let matchCount = 0;
 
-  articles.forEach((item) => {
-    item.element.style.display = "none";
-    if (item.title.includes(keyword) || item.excerpt.includes(keyword)) {
-      item.element.style.display = "block";
-      matchCount++;
-    }
-  });
+      articlesData.forEach((item) => {
+        item.element.style.display = "none";
+        if (item.title.includes(keyword) || item.excerpt.includes(keyword)) {
+          item.element.style.display = "block";
+          matchCount++;
+        }
+      });
 
-  searchResults.innerHTML =
-    matchCount === 0
-      ? `<p>Tidak ada hasil untuk "<strong>${keyword}</strong>"</p>`
-      : "";
-});
-
-// Tutup hamburger menu jika klik di luar area menu
-document.addEventListener("click", (e) => {
-  const isClickInsideMenu = navbarCenter.contains(e.target);
-  const isClickOnHamburger = hamburger.contains(e.target);
-
-  if (!isClickInsideMenu && !isClickOnHamburger) {
-    navbarCenter.classList.remove("active");
+      if (searchResults) {
+        searchResults.innerHTML =
+          matchCount === 0
+            ? `<p>Tidak ada hasil untuk "<strong>${keyword}</strong>"</p>`
+            : "";
+      }
+    });
   }
-});
 
-// semua pencarianya
-window.addEventListener("DOMContentLoaded", () => {
-  const row = document.querySelector(".row");
-  const cards = Array.from(document.querySelectorAll(".menu-card-link"));
+  // ===== LOAD MORE =====
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  if (loadMoreBtn) {
+    const container = document.getElementById("articles-container");
+    let articles = JSON.parse(loadMoreBtn.dataset.articles || "[]");
+    let current = parseInt(loadMoreBtn.dataset.current || 0);
+    const perPage = parseInt(loadMoreBtn.dataset.perpage || 5);
 
-  // Acak urutan kartu
-  const shuffled = cards.sort(() => 0.5 - Math.random());
+    loadMoreBtn.addEventListener("click", () => {
+      const nextArticles = articles.slice(current, current + perPage);
 
-  // Kosongkan container, lalu masukkan kembali dalam urutan acak
-  row.innerHTML = "";
-  shuffled.forEach((card) => row.appendChild(card));
+      nextArticles.forEach((article) => {
+        const card = document.createElement("div");
+        card.className = "menu-card";
+        card.innerHTML = `
+          <a href="/${article.category.toLowerCase()}/${article.slug.toLowerCase()}" class="menu-card-link">
+            <img src="/${article.img}" alt="${
+          article.alt
+        }" class="featured-img">
+            <div class="card-content">
+              <h3>${article.title}</h3>
+              <p class="excerpt">${article.excerpt}</p>
+            </div>
+          </a>
+        `;
+        container.appendChild(card);
+      });
+
+      current += perPage;
+      if (current >= articles.length) loadMoreBtn.style.display = "none";
+    });
+  }
 });

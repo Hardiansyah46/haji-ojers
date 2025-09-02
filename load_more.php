@@ -9,7 +9,7 @@ $more_articles = array_slice($articles_sorted, $offset, $limit);
 
 foreach ($more_articles as $article): ?>
   <div class="menu-card">
-    <a href="/haji-ojers/<?= $article['category'] ?>/<?= $article['slug'] ?>" class="menu-card-link">
+    <a href="<?= $article['category'] ?>/<?= $article['slug'] ?>" class="menu-card-link">
       <img src="<?= $article['img'] ?>" alt="<?= $article['alt'] ?>" class="featured-img">
       <div class="card-content">
         <h3><?= $article['title'] ?></h3>

@@ -1,6 +1,6 @@
 <?php
 include "data/articles.php";
-$base = "/haji-ojers";
+$base = "";
 ?>
 
 <div class="layout">

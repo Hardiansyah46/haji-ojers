@@ -1,6 +1,6 @@
 <?php
 include "data/articles.php";
-$base = "/haji-ojers";
+$base = "";
 
 $keyword = $_GET['q'] ?? '';
 $results = [];

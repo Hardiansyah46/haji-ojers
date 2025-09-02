@@ -1,28 +1,38 @@
 Options +FollowSymLinks
 RewriteEngine On
-RewriteBase /haji-ojers/
+RewriteBase /
+
+# ✅ Jangan rewrite kalau file atau folder memang ada
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
 
 # Hilangkan index.php dari URL
-RewriteCond %{THE_REQUEST} /index\.php\? [NC]
-RewriteRule ^index\.php$ /haji-ojers/ [R=301,L]
+RewriteCond %{THE_REQUEST} /index\.php [NC]
+RewriteRule ^index\.php$ / [R=301,L]
 
 # Homepage dengan pagination
 RewriteRule ^page/([0-9]+)/?$ index.php?page=home&hal=$1 [L,QSA]
 RewriteRule ^$ index.php?page=home [L,QSA]
 
-# Kategori dengan pagination: /kategori atau /kategori/page/2
-RewriteRule ^([a-zA-Z0-9_-]+)/page/([0-9]+)/?$ index.php?page=category&cat=$1&hal=$2 [L,QSA]
-RewriteRule ^([a-zA-Z0-9_-]+)/?$ index.php?page=category&cat=$1 [L,QSA]
+# Produk: /produk/slug-produk
+RewriteRule ^produk/([a-zA-Z0-9_-]+)/?$ index.php?page=produk&slug=$1 [L,QSA]
 
-# Produk: /kategori/slug-produk
-RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/?$ index.php?page=produk&kategori=$1&slug=$2 [L,QSA]
+# Artikel kategori + slug (contoh: /olahraga/malut-united-menang)
+RewriteRule ^(olahraga|opini|berita)/([a-zA-Z0-9_-]+)/?$ index.php?page=artikel&category=$1&slug=$2 [L,QSA]
 
-# Artikel: /tahun/bulan/hari/slug-artikel
-RewriteRule ^([0-9]{4})/([0-9]{2})/([0-9]{2})/([a-zA-Z0-9_-]+)/?$ index.php?page=artikel&tahun=$1&bulan=$2&hari=$3&slug=$4 [L,QSA]
+
+# Halaman kategori tanpa slug (contoh: /olahraga)
+RewriteRule ^(olahraga|opini|berita)/?$ index.php?page=$1 [L,QSA]
 
 # Search
-RewriteRule ^search/?$ pages/search.php [L]
+RewriteRule ^search/?$ index.php?page=search [L,QSA]
 
+# About, Contact, Privacy Policy
+RewriteRule ^about/?$ index.php?page=about [L,QSA]
+RewriteRule ^contact-us/?$ index.php?page=contact-us [L,QSA]
+RewriteRule ^privacy-policy/?$ index.php?page=privacy-policy [L,QSA]
 
-
-
+# Default fallback -> index.php
+RewriteRule ^(.+)$ index.php?page=$1 [L,QSA]
